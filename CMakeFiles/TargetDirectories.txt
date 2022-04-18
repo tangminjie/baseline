@@ -1,0 +1,3 @@
+/mnt/d/baseline/CMakeFiles/rebuild_cache.dir
+/mnt/d/baseline/CMakeFiles/edit_cache.dir
+/mnt/d/baseline/CMakeFiles/neutron.dir
