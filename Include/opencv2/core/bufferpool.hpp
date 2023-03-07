@@ -21,7 +21,7 @@ namespace cv
 class BufferPoolController
 {
 protected:
-    ~BufferPoolController() {}
+    ~BufferPoolController() { }
 public:
     virtual size_t getReservedSize() const = 0;
     virtual size_t getMaxReservedSize() const = 0;

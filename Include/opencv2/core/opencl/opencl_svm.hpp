@@ -28,7 +28,7 @@ struct SVMCapabilities
     };
     int value_;
 
-    SVMCapabilities(int capabilities = 0) : value_(capabilities) {}
+    SVMCapabilities(int capabilities = 0) : value_(capabilities) { }
     operator int() const { return value_; }
 
     inline bool isNoSVMSupport() const { return value_ == 0; }

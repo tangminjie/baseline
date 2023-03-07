@@ -1,10 +1,12 @@
+#CMAKE版本
 cmake_minimum_required(VERSION 3.16.3)
-
+#输出提示信息
 message(STATUS "******************************************************************")
 message(STATUS "CMAKE_SOURCE_DIR->" ${CMAKE_SOURCE_DIR})
 message(STATUS "PROJECT_SOURCE_DIR->)" ../../..)
 message(STATUS "******************************************************************")
 
+#设置项目名
 project(Application)
 
 find_package(Git)
@@ -46,12 +48,25 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Lib/)
 
 SET(CMAKE_C_COMPILER "gcc")
 SET(CMAKE_CXX_COMPILER "g++")
+
+SET(CMAKE_BUILD_TYPE "Debug")
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=thread")
+
+add_compile_options(-std=c++11 -pthread -g  -ggdb -O0 -Wall  
+ -fstack-protector-all -march=native -fnon-call-exceptions)
+ 
+
 #SET(CMAKE_CXX_FLAGS "-std=c++14")
 
 #add_definitions(-D__LOG_CONSOLE -D__GNU_SOURCE)
 
 include_directories(${PROJECT_SOURCE_DIR}/Include)
 include_directories(${PROJECT_SOURCE_DIR}/Include/uuid)
+include_directories(${PROJECT_SOURCE_DIR}/Include/opencv2)
+include_directories(${PROJECT_SOURCE_DIR}/Include/MeadiaFrame)
+include_directories(${PROJECT_SOURCE_DIR}/Include/AlgArcSoft)
 include_directories(${PROJECT_SOURCE_DIR}/Include/json)
 include_directories(${PROJECT_SOURCE_DIR}/Include/Utils)
 include_directories(${PROJECT_SOURCE_DIR}/Include/Infra)
@@ -77,6 +92,7 @@ link_directories(${PROJECT_SOURCE_DIR}/Lib/ssl)
 link_directories(${PROJECT_SOURCE_DIR}/Lib/curl)
 link_directories(${PROJECT_SOURCE_DIR}/Lib/spdlog)
 link_directories(${PROJECT_SOURCE_DIR}/Lib/easySqllite)
+link_directories(${PROJECT_SOURCE_DIR}/Lib/algArc)
 
 add_definitions(-Wno-builtin-macro-redefined -D__GNU_SOURCE)
 
@@ -84,8 +100,12 @@ add_executable(neutron ${SRC_LIST})
 REDEFINE_FILE_MACRO(neutron)
 
 target_link_libraries(neutron
-		spdlog crypto ssl curl 
-		jsoncpp uuid easysqlite
+		arcsoft_face
+		arcsoft_face_engine		
+		spdlog
+		opencv_core opencv_highgui opencv_videoio opencv_imgcodecs opencv_imgproc
+		uuid crypto ssl curl 
+		jsoncpp easysqlite
         pthread
 		)
 

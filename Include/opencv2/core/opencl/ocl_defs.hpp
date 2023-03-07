@@ -30,14 +30,14 @@ static inline bool isOpenCLActivated() { return false; }
     {                                                                       \
         if (cv::ocl::isOpenCLActivated() && (condition) && func)            \
         {                                                                   \
-            printf("{}: OpenCL implementation is running\n", CV_Func);      \
+            printf("%s: OpenCL implementation is running\n", CV_Func);      \
             fflush(stdout);                                                 \
             CV_IMPL_ADD(CV_IMPL_OCL);                                       \
             return __VA_ARGS__;                                             \
         }                                                                   \
         else                                                                \
         {                                                                   \
-            printf("{}: Plain implementation is running\n", CV_Func);       \
+            printf("%s: Plain implementation is running\n", CV_Func);       \
             fflush(stdout);                                                 \
         }                                                                   \
     }
@@ -59,11 +59,18 @@ static inline bool isOpenCLActivated() { return false; }
     }
 #else
 #define CV_OCL_RUN_(condition, func, ...)                                   \
+try \
+{ \
     if (cv::ocl::isOpenCLActivated() && (condition) && func)                \
     {                                                                       \
         CV_IMPL_ADD(CV_IMPL_OCL);                                           \
         return __VA_ARGS__;                                                 \
-    }
+    } \
+} \
+catch (const cv::Exception& e) \
+{ \
+    CV_UNUSED(e); /* TODO: Add some logging here */ \
+}
 #endif
 
 #else

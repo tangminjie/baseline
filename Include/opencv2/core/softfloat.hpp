@@ -227,7 +227,7 @@ struct CV_EXPORTS softdouble
 {
 public:
     /** @brief Default constructor */
-    softdouble() : v(0) {}
+    softdouble() : v(0) { }
     /** @brief Copy constructor */
     softdouble( const softdouble& c) { v = c.v; }
     /** @brief Assign constructor */
@@ -507,8 +507,8 @@ Special cases:
 */
 CV_EXPORTS softdouble cos( const softdouble& a );
 
-}
+//! @} core_utils_softfloat
 
-//! @}
+} // cv::
 
 #endif
