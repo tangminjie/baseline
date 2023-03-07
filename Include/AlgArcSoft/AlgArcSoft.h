@@ -7,7 +7,7 @@
 #include "AlgArcSoft/IAlgArcSoft.h"
 #include "Infra/Concurrence/Mutex.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 /**

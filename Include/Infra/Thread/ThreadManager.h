@@ -6,7 +6,7 @@
 #include <string>
 #include "Infra/Thread/Thread.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 struct ThreadManagerInternal;

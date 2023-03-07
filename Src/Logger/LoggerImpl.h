@@ -88,11 +88,11 @@ public:
 private:
     bool                               mInited;
     char*                              mBuffer;
-    Uface::Infra::CMutex               mMutex;
+    ArcFace::Infra::CMutex               mMutex;
     LoggerLevel                        mLevel;
     int32_t                            mSize;
     BacktraceSignal                    mBtSignal;
-    Uface::Infra::CTimer               mTimer;
+    ArcFace::Infra::CTimer               mTimer;
 };
 
 #endif //APPLICATION_SRC_LOGGER_LOGGERIMOL_H

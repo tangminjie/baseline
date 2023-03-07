@@ -10,7 +10,7 @@
 #include "Infra/Thread/ThreadManager.h"
 #include "Infra/Concurrence/Semaphore.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 

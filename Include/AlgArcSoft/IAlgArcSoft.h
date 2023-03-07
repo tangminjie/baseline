@@ -3,7 +3,7 @@
 
 #include "AlgArcSoft/FaceStructures.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 /**

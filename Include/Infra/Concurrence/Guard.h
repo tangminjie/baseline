@@ -6,7 +6,7 @@
 #include "Infra/Concurrence/ReadWriteMutex.h"
 #include "Infra/Concurrence/RecursiveMutex.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 class CGuard {

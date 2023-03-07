@@ -6,7 +6,7 @@
 #include "AlgArcSoft/IAlgArcSoft.h"
 #include "MediaFrame/IMediaFrame.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 /**

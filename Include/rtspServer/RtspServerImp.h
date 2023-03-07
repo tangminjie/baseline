@@ -17,7 +17,7 @@
 
 #include "Client/Client.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace RtspServer {
 
 class RtspServer: public Application::IClient {

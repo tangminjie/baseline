@@ -8,7 +8,7 @@
 #include "Utils/Base64.h"
 #include "jsoncpp/json.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 typedef union {

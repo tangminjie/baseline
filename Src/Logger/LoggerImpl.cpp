@@ -36,7 +36,7 @@ ILogger *ILogger::instance() {
 LoggerImpl::LoggerImpl() : mInited(false),
                            mBuffer(nullptr), mLevel(loggerDebug),
                            mSize(0), mBtSignal(64), mTimer("logger") {
-   // mStorageClient = Uface::cloudStorage::IStorageCloud::createSCClient("alioss");
+   // mStorageClient = ArcFace::cloudStorage::IStorageCloud::createSCClient("alioss");
 }
 
 LoggerImpl::~LoggerImpl() {
@@ -98,7 +98,7 @@ bool LoggerImpl::initial(const char *app, int32_t size) {
     mSize = size + 1;
     mBuffer = (char*)malloc(mSize);
     mLevel = loggerDebug;
-    //mTimer.start(Uface::Infra::CTimer::Proc(&LoggerImpl::onTimer, this), 1000, 600*1000);
+    //mTimer.start(ArcFace::Infra::CTimer::Proc(&LoggerImpl::onTimer, this), 1000, 600*1000);
     mInited = true;
 
     return mInited;
@@ -161,7 +161,7 @@ int32_t LoggerImpl::print(LoggerLevel level, const char *module, const char *fmt
 
     va_list ap;
     va_start(ap, fmt);
-    Uface::Infra::CGuard guard(mMutex);
+    ArcFace::Infra::CGuard guard(mMutex);
     memset(mBuffer,0x00, mSize);
     int32_t logLength = vsnprintf(mBuffer, mSize - 1, fmt, ap);
     va_end(ap);
@@ -209,14 +209,14 @@ void LoggerImpl::onTimer(uint64_t param) {
 
 //     (void)param;
 //     std::string logDir = "/data/record/log/compress/";
-//     int64_t space = Uface::Application::StorageManager::instance()->getFileSpace(logDir.c_str());
+//     int64_t space = ArcFace::Application::StorageManager::instance()->getFileSpace(logDir.c_str());
 // //    tracef("compress space:%d", space);
 //     if (space > 0) {
-//         std::vector<std::string> files = Uface::Application::StorageManager::instance()->getSubFile(logDir.c_str());
+//         std::vector<std::string> files = ArcFace::Application::StorageManager::instance()->getSubFile(logDir.c_str());
 //         Json::Value devInfo = Json::nullValue;
-//         Uface::Application::ISystem::instance()->getDeviceInfo(devInfo);
+//         ArcFace::Application::ISystem::instance()->getDeviceInfo(devInfo);
 //         char date[128] = {0};
-//         Uface::Infra::CTime time = Uface::Infra::CTime::getCurrentTime();
+//         ArcFace::Infra::CTime time = ArcFace::Infra::CTime::getCurrentTime();
 //         snprintf(date, sizeof(date) - 1,"/%04d-%02d-%02d/",
 //                  time.year, time.month, time.day);
 
@@ -227,11 +227,11 @@ void LoggerImpl::onTimer(uint64_t param) {
 //             if (strstr(files[i].c_str() , "log.bz2") == nullptr) {
 //                 continue;
 //             }
-//             if (Uface::Application::StorageManager::instance()->fileIsEmpty(filePath.c_str())) {
+//             if (ArcFace::Application::StorageManager::instance()->fileIsEmpty(filePath.c_str())) {
 //                 continue;
 //             }
 
-//             Json::Value ossInfo = Uface::PrivateChannel::DeviceConfig::instance()->getOssStorageInfo();
+//             Json::Value ossInfo = ArcFace::PrivateChannel::DeviceConfig::instance()->getOssStorageInfo();
 //             ossInfo["bucket"] = "wo-device";
 //             mStorageClient->setStorageParam(ossInfo);
 //             if (mStorageClient->uploadFile(filePath,objectName)) {
@@ -239,7 +239,7 @@ void LoggerImpl::onTimer(uint64_t param) {
 //                 url.append("https://").append(ossInfo["bucket"].asString()).append(".").append(
 //                         ossInfo["storageUrl"].asString()).append("/").append(objectName);
 // //                tracef("log url : %s", url.c_str());
-//                 Uface::Application::StorageManager::instance()->unlinkFile(filePath.c_str());
+//                 ArcFace::Application::StorageManager::instance()->unlinkFile(filePath.c_str());
 //             }
 //         }
 //     }

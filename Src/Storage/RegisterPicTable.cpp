@@ -24,7 +24,7 @@
 #include "easySqllite/SqlField.h"
 #include "easySqllite/SqlCommon.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 static sql::Field fieldRegisterPicTable[] = {
@@ -302,7 +302,7 @@ int32_t RegisterPicTable::query(const Json::Value& condition,RegisterPicInfoVec&
     return picInfos.empty()? StorageRegisterPicNotExistCode:StorageSuccess;
 }
 
-int32_t RegisterPicTable::query(const std::string &registerId, Uface::Application::RegisterPicInfo &picInfo) {
+int32_t RegisterPicTable::query(const std::string &registerId, ArcFace::Application::RegisterPicInfo &picInfo) {
 
     std::string condString;
     condString.append("registerId=\'").append(registerId).append("\'");

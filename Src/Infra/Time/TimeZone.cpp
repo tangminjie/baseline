@@ -13,7 +13,7 @@
 
 #include "Infra/Time/TimeZone.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 static const TimeZone gCfgTimeZoneList[] = {

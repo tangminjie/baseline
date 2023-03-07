@@ -21,7 +21,7 @@
 #include "AlgArcSoft/FaceRecognitionProcess.h"
 
 int32_t main(int32_t argc,char** argv) {
-using namespace Uface::Application;
+using namespace ArcFace::Application;
 
 /**模块初始化、加载逻辑*/
 ILogger::instance()->initial("application",4098);
@@ -92,10 +92,10 @@ while(true){
 // std::string photoPath = "/tmp/";
 // std::string photoName = "photo1";
 // std::string photoDir = StorageManager::instance()->createFileName(photoPath.c_str(),photoName.c_str(),".jpg");
-// Uface::Application::HttpClient httpclient;
+// ArcFace::Application::HttpClient httpclient;
 // int64_t photolen = httpclient.getFileLength(photoUrl);
 // tracef("photo length {}",photolen);
-// //Uface::Application::OnDownloadCb cb;
+// //ArcFace::Application::OnDownloadCb cb;
 // httpclient.downloadFile(photoUrl,photoDir,nullptr);
 //tracef("######################## photoUrl {}",photoUrl.c_str());    
 

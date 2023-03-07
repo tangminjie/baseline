@@ -19,7 +19,7 @@
 #include "Infra/Concurrence/Mutex.h"
 #include "easySqllite/SqlTable.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 class TableInternal {

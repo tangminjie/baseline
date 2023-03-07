@@ -4,7 +4,7 @@
 
 #include <cstdint>
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 

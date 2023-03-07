@@ -53,6 +53,6 @@
 #define errorf(format,...)               loggerErrorf(format,##__VA_ARGS__)
 
 #include <cassert>
-#define UFACE_ASSERT(condition,fmt)     do { if (!(condition)) {errorf(fmt);assert(0);}} while(0);
+#define ARCFACE_ASSERT(condition,fmt)     do { if (!(condition)) {errorf(fmt);assert(0);}} while(0);
 
 #endif //APPLICATION_INCLUDE_LOGGER_DEFINE_H

@@ -6,7 +6,7 @@
 
 #include "Infra/Define.h"
 
-namespace Uface{
+namespace ArcFace{
 namespace Infra{
 
 /**
@@ -56,6 +56,6 @@ private:
 };
 
 } // namespace Infra
-} // namespace Uface
+} // namespace ArcFace
 
 #endif //FRAMEWORK_INCLUDE_INFRA_SEMAPHORE_H

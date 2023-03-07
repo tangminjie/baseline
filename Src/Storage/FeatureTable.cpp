@@ -25,7 +25,7 @@
 #include "easySqllite/SqlField.h"
 #include "easySqllite/SqlCommon.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 static sql::Field fieldFeatureTable[] = {

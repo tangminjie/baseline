@@ -1,7 +1,7 @@
 
 #include "Utils/Base64.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 static const std::string base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";

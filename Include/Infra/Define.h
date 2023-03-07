@@ -18,8 +18,8 @@
 #define __attribute__(x)
 #endif
 
-#define UFACE_JOIN(X,Y)         UFACE_DO_JOIN(X,Y)
-#define UFACE_DO_JOIN(X,Y)      UFACE_DO_JOIN2(X,Y)
-#define UFACE_DO_JOIN2(X,Y)     X##Y
+#define ARCFACE_JOIN(X,Y)         ARCFACE_DO_JOIN(X,Y)
+#define ARCFACE_DO_JOIN(X,Y)      ARCFACE_DO_JOIN2(X,Y)
+#define ARCFACE_DO_JOIN2(X,Y)     X##Y
 
 #endif //APPLICATE_INCLUDE_INFRA_DEFINE_H

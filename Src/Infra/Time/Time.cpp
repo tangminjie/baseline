@@ -28,7 +28,7 @@
 
 #define USECLOCK_GETTIME
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 static bool setRtcTime(bool utc);
@@ -115,7 +115,7 @@ small_rem:
 
 
 static std::string  sFormat("yyyy-MM-dd HH:mm:ss");
-static Uface::Infra::CTime::DateFormat sDateFormat = Uface::Infra::CTime::ymd;
+static ArcFace::Infra::CTime::DateFormat sDateFormat = ArcFace::Infra::CTime::ymd;
 static char sDateSeparator = '-';
 static bool s12hour = false;
 static bool sBTimeUpdateNow = false;
@@ -340,7 +340,7 @@ uint64_t CTime::getCurrentMilliSecond() {
     /**当前tick计数,初始化为一个中间值,处理第一次溢出*/
     static uint64_t curtick = 0x7fffffff;
     /**用户互斥访问*/
-    static Uface::Infra::CAtomicCount exclusion(0);
+    static ArcFace::Infra::CAtomicCount exclusion(0);
     /**先备份一下,避免多线程访问出错*/
     uint64_t tmptick = curtick;
     /**times必须使用非空参数,以兼容更多的平台̨*/
@@ -397,7 +397,7 @@ void CTime::setFormatString(const char* format) {
     } else if(sFormat.find('-') != std::string::npos) {
         sDateSeparator = '-';
     } else {
-        UFACE_ASSERT(0,"not support separator falg");
+        ARCFACE_ASSERT(0,"not support separator falg");
     }
 
     /**设置12小时制*/
@@ -414,7 +414,7 @@ void CTime::setFormatString(const char* format) {
     } else if(pos3 < pos2 && pos2 < pos1){
         sDateFormat = dmy;
     } else {
-        UFACE_ASSERT(0,"not support data format");
+        ARCFACE_ASSERT(0,"not support data format");
     }
 }
 
@@ -528,7 +528,7 @@ void CTime::format(char* buf, const char *format, int mask) const {
     const char* str[3] = {nullptr};
     size_t size = strlen(format);
 
-    UFACE_ASSERT(buf != nullptr,"buffer is null");
+    ARCFACE_ASSERT(buf != nullptr,"buffer is null");
     buf[0] = '\0';
 
     /**日期字符串格式化*/
@@ -592,7 +592,7 @@ void CTime::format(char* buf, const char *format, int mask) const {
         } else if(pos3 < pos2 && pos2 < pos1) {
             df = dmy;
         } else {
-            UFACE_ASSERT(0,"not support data format");
+            ARCFACE_ASSERT(0,"not support data format");
         }
     }
 
@@ -812,4 +812,4 @@ static CTime  getCurrentLocalTime() {
     return result;
 }
 } //namespace Infra
-} //namespace Uface
+} //namespace ArcFace

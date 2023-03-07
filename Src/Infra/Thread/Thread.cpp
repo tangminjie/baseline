@@ -23,29 +23,29 @@
 #include "Infra/Time/Time.h"
 #include "Infra/Thread/Thread.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 static void* InternalThreadBody(void *pdat);
 
 static void* InternalThreadBody(void *pdat) {
 
-    Uface::Infra::ThreadInternal* pInternal = reinterpret_cast<Uface::Infra::ThreadInternal*>(pdat);
+    ArcFace::Infra::ThreadInternal* pInternal = reinterpret_cast<ArcFace::Infra::ThreadInternal*>(pdat);
 
     /**设置linux 非实时线程的优先级,实际上是设置nice值*/
-	if(pInternal->mPolicy == Uface::Infra::CThread::policyNormal) {
-		int32_t priority = -19 + pInternal->mPriority * 40 / (Uface::Infra::CThread::priorBottom + 1);
+	if(pInternal->mPolicy == ArcFace::Infra::CThread::policyNormal) {
+		int32_t priority = -19 + pInternal->mPriority * 40 / (ArcFace::Infra::CThread::priorBottom + 1);
 		setpriority(PRIO_PROCESS, 0, priority);
 	}
 
     pInternal->mMutex.enter();
     pInternal->mRunning = true;
-    pInternal->mId = Uface::Infra::CThread::getCurrentThreadId();
+    pInternal->mId = ArcFace::Infra::CThread::getCurrentThreadId();
     pInternal->mMutex.leave();
     pInternal->mManager->addThread(pInternal);
 
     debugf("ThreadBody Enter name = {}, id = %d, prior = {}%d, stack = %p \n",
-    pInternal->mName, pInternal->mId, (pInternal->mPolicy == Uface::Infra::CThread::policyRealtime) ? "R" : "N", pInternal->mPriority, &pInternal);
+    pInternal->mName, pInternal->mId, (pInternal->mPolicy == ArcFace::Infra::CThread::policyRealtime) ? "R" : "N", pInternal->mPriority, &pInternal);
     pInternal->mOwner->threadProc();
     debugf("ThreadBody leave name = {}, id = %d \n", pInternal->mName, pInternal->mId);
     pInternal->mManager->removeThread(pInternal);
@@ -397,7 +397,7 @@ void CThread::sleep(int32_t ms) {
 }
 
 void CThread::load(int percent) {
-    UFACE_ASSERT(percent >= 1 && percent <= 100,"percent is out range(0~100)");
+    ARCFACE_ASSERT(percent >= 1 && percent <= 100,"percent is out range(0~100)");
     if(percent < 100) {
         CThreadLoadingController::instance()->addThread(pthread_self(), percent, 100 - percent);
     } else {

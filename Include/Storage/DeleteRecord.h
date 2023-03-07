@@ -18,7 +18,7 @@
 #include "Storage/ITable.h"
 #include "Storage/Define.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 class TableInternal;

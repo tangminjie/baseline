@@ -4,7 +4,7 @@
 #include <cstdio>
 #include <string>
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 struct CTimeRecord::TimeRecordInternal {

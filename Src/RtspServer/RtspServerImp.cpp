@@ -14,7 +14,7 @@
 #include "rtspServer/RtspServerImp.h"
 #include "Logger/Define.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace RtspServer {
 
 static RtspServer sRtspServer;

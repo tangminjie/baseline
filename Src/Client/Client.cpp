@@ -18,7 +18,7 @@
 #include "Client/ClientManager.h"
 
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 

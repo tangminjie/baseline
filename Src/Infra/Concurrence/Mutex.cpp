@@ -8,7 +8,7 @@
 
 extern "C"	int pthread_mutexattr_settype (pthread_mutexattr_t *__attr, int __kind);
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 struct CMutex::MutexInternal {
@@ -18,13 +18,13 @@ struct CMutex::MutexInternal {
 CMutex::CMutex() {
 	mInternal = new MutexInternal;
 	int ret = pthread_mutex_init(&mInternal->mtx, nullptr);
-	UFACE_ASSERT(ret == 0,"initial pthread mutex failed");
+	ARCFACE_ASSERT(ret == 0,"initial pthread mutex failed");
 	(void)ret;
 }
 
 CMutex::~CMutex() {
     int32_t ret = pthread_mutex_destroy(&mInternal->mtx);
-    UFACE_ASSERT(ret == 0,"destroy pthread mutex failed");
+    ARCFACE_ASSERT(ret == 0,"destroy pthread mutex failed");
 	(void)ret;
 
 	delete mInternal;
@@ -44,6 +44,6 @@ bool CMutex::leave() {
 }
 
 } // namespace Infra
-} // namespace Uface
+} // namespace ArcFace
 
 

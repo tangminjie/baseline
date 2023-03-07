@@ -18,7 +18,7 @@
 #include "easySqllite/sqlite3.h"
 #include "easySqllite/SqlTable.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 /**

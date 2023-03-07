@@ -22,7 +22,7 @@
 #include "System/StorageManager.h"
 #include "easySqllite/SqlRecord.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 static sql::Field fieldDeleteTable[] = {

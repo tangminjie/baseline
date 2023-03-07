@@ -3,7 +3,7 @@
 #include "ThreadInternal.h"
 #include "Infra/Thread/ThreadManager.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 CThreadManager* CThreadManager::instance() {

@@ -11,7 +11,7 @@ extern "C" {
 }
 
 namespace {
-using namespace Uface;
+using namespace ArcFace;
 
 inline int32_t linuxSystem(const char* command) {
 	if (command == nullptr) {
@@ -41,7 +41,7 @@ inline int32_t linuxSystem(const char* command) {
 } // namespace noname
 
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 int32_t systemCall(const char* command) {

@@ -14,7 +14,7 @@
 #include "Infra/Time/Time.h"
 #include "System/StorageManager.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 StorageManager* StorageManager::instance() {

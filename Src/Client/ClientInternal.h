@@ -22,7 +22,7 @@
 #include "Infra/Concurrence/Guard.h"
 #include "Infra/Concurrence/Semaphore.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 class IClient::ClientInternal {

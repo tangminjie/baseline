@@ -2,7 +2,7 @@
 
 #include "Infra/Concurrence/CondMutex.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 struct CCondMutex::CCondMutexInternal {

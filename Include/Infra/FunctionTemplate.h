@@ -1,6 +1,6 @@
 
 
-#define FUNCTION_FUNCTION   UFACE_JOIN(TFunction,FUNCTION_NUMBER)
+#define FUNCTION_FUNCTION   ARCFACE_JOIN(TFunction,FUNCTION_NUMBER)
 
 /**
  * @brief 函数指针类模版
@@ -42,16 +42,16 @@
 #define FUNCTION_COMMA ,
 #endif // FUNCTION_NUMBER > 0
 
-#define UFACE_JOIN(X,Y)         UFACE_DO_JOIN(X,Y)
-#define UFACE_DO_JOIN(X,Y)      UFACE_DO_JOIN2(X,Y)
-#define UFACE_DO_JOIN2(X,Y)     X##Y
+#define ARCFACE_JOIN(X,Y)         ARCFACE_DO_JOIN(X,Y)
+#define ARCFACE_DO_JOIN(X,Y)      ARCFACE_DO_JOIN2(X,Y)
+#define ARCFACE_DO_JOIN2(X,Y)     X##Y
 
-#define FUNCTION_INVOKER            UFACE_JOIN(function_invoker, FUNCTION_NUMBER)
-#define FUNCTION_VOID_INVOKER       UFACE_JOIN(function_void_invoker, FUNCTION_NUMBER)
-#define GET_FUNCTION_INVOKER        UFACE_JOIN(get_function_invoker, FUNCTION_NUMBER)
-#define MEM_FUNCTION_INVOKER        UFACE_JOIN(mem_function_invoker, FUNCTION_NUMBER)
-#define MEM_FUNCTION_VOID_INVOKER   UFACE_JOIN(mem_function_void_invoker, FUNCTION_NUMBER)
-#define GET_MEM_FUNCTION_INVOKER    UFACE_JOIN(get_mem_function_invoker, FUNCTION_NUMBER)
+#define FUNCTION_INVOKER            ARCFACE_JOIN(function_invoker, FUNCTION_NUMBER)
+#define FUNCTION_VOID_INVOKER       ARCFACE_JOIN(function_void_invoker, FUNCTION_NUMBER)
+#define GET_FUNCTION_INVOKER        ARCFACE_JOIN(get_function_invoker, FUNCTION_NUMBER)
+#define MEM_FUNCTION_INVOKER        ARCFACE_JOIN(mem_function_invoker, FUNCTION_NUMBER)
+#define MEM_FUNCTION_VOID_INVOKER   ARCFACE_JOIN(mem_function_void_invoker, FUNCTION_NUMBER)
+#define GET_MEM_FUNCTION_INVOKER    ARCFACE_JOIN(get_mem_function_invoker, FUNCTION_NUMBER)
 
 //using namespace std;
 

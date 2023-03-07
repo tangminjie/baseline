@@ -18,7 +18,7 @@
 #include <string>
 #include <memory>
 
-namespace Uface {
+namespace ArcFace {
 namespace RtspServer {
 
 class RtspManger

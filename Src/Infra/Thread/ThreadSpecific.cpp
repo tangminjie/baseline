@@ -2,7 +2,7 @@
 #include "Infra/Define.h"
 #include "Infra/Thread/ThreadSpecific.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 struct CThreadSpecific::CThreadSpecificInternal {

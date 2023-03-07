@@ -1,6 +1,6 @@
 #include "MediaFrame/MediaFrameImpl.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 IMediaFrame* IMediaFrame::instance() {
@@ -76,7 +76,7 @@ bool CMediaFrameImpl::readMediaFrame(FrameData &frameData){
     frameData.frame_nv21 = yuv_frame;
     frameData.frame_rgb = frame;
     frameData.offscreen = offscreen;
-    
+
     return false;
 }
 

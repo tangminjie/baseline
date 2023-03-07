@@ -6,7 +6,7 @@
 #include <iostream>
 #include "Infra/Define.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 namespace Detail {
@@ -140,7 +140,7 @@ inline OutputClass horrible_cast(const InputClass input) {
 #undef	FUNCTION_ARGS
 
 } // namespace Infra
-} // namespace Uface
+} // namespace ArcFace
 
 
 #endif //FRAMEWORK_INCLUDE_INFRA_FUNCTION_H

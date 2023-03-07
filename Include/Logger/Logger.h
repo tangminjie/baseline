@@ -41,7 +41,7 @@ public:
     /**
      * @brief backtrace 回调
      */
-    typedef Uface::Infra::TSignal1 <BtExitType> BacktraceSignal;
+    typedef ArcFace::Infra::TSignal1 <BtExitType> BacktraceSignal;
     typedef BacktraceSignal::Proc BacktraceProc;
 
 public:

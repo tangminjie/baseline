@@ -6,7 +6,7 @@
 #include "Infra/Define.h"
 #include "Infra/Function.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 

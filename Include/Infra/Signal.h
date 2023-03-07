@@ -22,7 +22,7 @@
 #include "Infra/Concurrence/Mutex.h"
 #include "Infra/Concurrence/Guard.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 //TSignal0
@@ -117,7 +117,7 @@ namespace Infra {
 #undef	SIGNAL_ARGS
 
 } // namespace Infra
-} // namespace Uface
+} // namespace ArcFace
 
 #if defined(_MSC_VER)
 #pragma warning (pop)

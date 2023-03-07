@@ -7,7 +7,7 @@
 #include "Infra/Function.h"
 #include "Infra/Time/SystemTime.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 /**
@@ -256,6 +256,6 @@ public:
 };
 
 } // namespace Infra
-} // namespace Uface
+} // namespace ArcFace
 
 #endif //FRAMEWORK_INCLUDE_INFRA_TIME_H

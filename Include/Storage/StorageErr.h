@@ -15,7 +15,7 @@
 #ifndef APPLICATION_INCLUDE_STORAGE_ERRNO_H
 #define APPLICATION_INCLUDE_STORAGE_ERRNO_H
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 typedef enum {

@@ -19,7 +19,7 @@
 #include "Infra/Concurrence/Guard.h"
 #include "Infra/Concurrence/Mutex.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 typedef std::map<std::string,IDBManager*> SQLLiteMap;
@@ -120,7 +120,7 @@ DBHandle* DBManagerImpl::getDbHandle() {
     return nullptr;
 }
 
-void DBManagerImpl::releaseHandle(Uface::Application::DBHandle *dbHandle) {
+void DBManagerImpl::releaseHandle(ArcFace::Application::DBHandle *dbHandle) {
     delete dbHandle;
 }
 

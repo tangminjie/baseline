@@ -22,7 +22,7 @@
 #include "Logger/Define.h"
 #include "Infra/Concurrence/Semaphore.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 struct CSemaphore::SemaphoreInternal {
@@ -37,15 +37,15 @@ CSemaphore::CSemaphore(int32_t initialCount) {
     mInternal = new SemaphoreInternal;
 
     int32_t ret = pthread_condattr_init(&mInternal->mCondAttr);
-    UFACE_ASSERT(ret == 0,"pthread cond attribute initial failed");
+    ARCFACE_ASSERT(ret == 0,"pthread cond attribute initial failed");
     ret = pthread_condattr_setclock(&mInternal->mCondAttr, CLOCK_MONOTONIC);
-    UFACE_ASSERT(ret == 0,"pthread cond set clock attribute failed");
+    ARCFACE_ASSERT(ret == 0,"pthread cond set clock attribute failed");
     /* initialize a condition variable to its default value */
     ret = pthread_cond_init(&mInternal->mCv, &mInternal->mCondAttr);
-    UFACE_ASSERT(ret == 0,"pthread cond initial failed");
+    ARCFACE_ASSERT(ret == 0,"pthread cond initial failed");
     /* initialize a condition variable */
     ret = pthread_mutex_init(&mInternal->mtx, nullptr);
-    UFACE_ASSERT(ret == 0,"pthread cond initial mutex failed");
+    ARCFACE_ASSERT(ret == 0,"pthread cond initial mutex failed");
     /**消除变量未使用编译告警*/
     (void)ret;
     assert(initialCount >= 0);
@@ -54,10 +54,10 @@ CSemaphore::CSemaphore(int32_t initialCount) {
 
 CSemaphore::~CSemaphore() {
     int32_t ret = pthread_mutex_destroy(&mInternal->mtx);
-    UFACE_ASSERT(ret == 0,"pthread destroy cond mutex failed");
+    ARCFACE_ASSERT(ret == 0,"pthread destroy cond mutex failed");
     (void)ret;
     ret = pthread_cond_destroy(&mInternal->mCv);
-    UFACE_ASSERT(ret == 0,"pthread destroy cond failed");
+    ARCFACE_ASSERT(ret == 0,"pthread destroy cond failed");
     delete mInternal;
     mInternal = nullptr;
 }

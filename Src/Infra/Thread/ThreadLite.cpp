@@ -3,7 +3,7 @@
 #include "Infra/Thread/ThreadLite.h"
 
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 CThreadLite::CThreadLite(ThreadProc proc, const char * name,

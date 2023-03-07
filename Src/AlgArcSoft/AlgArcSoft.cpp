@@ -1,7 +1,7 @@
 #include "AlgArcSoft/AlgArcSoft.h"
 #include "Logger/Define.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 IAlgArcSoft* IAlgArcSoft::instance() {

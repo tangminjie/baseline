@@ -9,7 +9,7 @@
 #include "Infra/Define.h"
 #include "jsoncpp/json.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 /**

@@ -7,7 +7,7 @@
 #include <string>
 #include "Infra/Define.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 /**
  * @brief base64 编码

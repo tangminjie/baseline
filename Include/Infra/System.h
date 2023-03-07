@@ -17,7 +17,7 @@
 
 #include "Infra/Define.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 /**
  * @brief 系统调用操作命令

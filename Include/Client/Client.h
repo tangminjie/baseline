@@ -17,7 +17,7 @@
 
 #include "jsoncpp/value.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 /**

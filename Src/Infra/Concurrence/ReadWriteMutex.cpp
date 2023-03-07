@@ -11,7 +11,7 @@
 
 
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 struct CReadWriteMutex::RWMutexInternal {
@@ -28,7 +28,7 @@ CReadWriteMutex::RWMutexInternal::RWMutexInternal(CReadWriteMutex::RW_PRIORITY p
 
     int32_t ret = -1;
 	mLock = (pthread_rwlock_t*)malloc(sizeof(pthread_rwlock_t));
-	UFACE_ASSERT(mLock,"out of memory");
+	ARCFACE_ASSERT(mLock,"out of memory");
 
 	if (CReadWriteMutex::PRIORITY_WRITE == priority ) {
         pthread_rwlockattr_t attr;
@@ -38,24 +38,24 @@ CReadWriteMutex::RWMutexInternal::RWMutexInternal(CReadWriteMutex::RW_PRIORITY p
 		ret = pthread_rwlock_init(mLock,nullptr);
 	}
 
-	UFACE_ASSERT(ret == 0,"initial rwlock error");
+	ARCFACE_ASSERT(ret == 0,"initial rwlock error");
 	(void)ret;
     markRWPriority = priority;
 }
 
 CReadWriteMutex::CReadWriteMutex() {
     mInternal = new RWMutexInternal(PRIORITY_DEFAULT);
-    UFACE_ASSERT(mInternal != nullptr,"out of memory");
+    ARCFACE_ASSERT(mInternal != nullptr,"out of memory");
 }
 
 CReadWriteMutex::CReadWriteMutex(CReadWriteMutex::RW_PRIORITY priority) {
     mInternal = new RWMutexInternal(priority);
-    UFACE_ASSERT(mInternal != nullptr,"out of memory");
+    ARCFACE_ASSERT(mInternal != nullptr,"out of memory");
 }
 
 CReadWriteMutex::~CReadWriteMutex() {
     int32_t ret = pthread_rwlock_destroy(mInternal->mLock);
-	UFACE_ASSERT(ret == 0,"destroy rwlock failed");
+	ARCFACE_ASSERT(ret == 0,"destroy rwlock failed");
 	free(mInternal->mLock);
     delete mInternal;
 }

@@ -5,7 +5,7 @@
 #include "Infra/Define.h"
 #include "Infra/Concurrence/Mutex.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 class CCondMutex : public CMutex {

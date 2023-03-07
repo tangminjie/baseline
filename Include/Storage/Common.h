@@ -15,7 +15,7 @@
 #ifndef APPLICATION_SRC_STORAGE_COMMON_H
 #define APPLICATION_SRC_STORAGE_COMMON_H
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 #define DB_LIB_DIR              "/data/storage"

@@ -1,7 +1,7 @@
 
 #include "AlgArcSoft/FaceRecognitionProcess.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 

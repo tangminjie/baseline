@@ -6,7 +6,7 @@
 #include "Infra/Define.h"
 #include "Infra/Time/SystemTime.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 /**
  * @brief disable timezone

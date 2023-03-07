@@ -7,7 +7,7 @@
 #include <vector>
 #include "Infra/Define.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 class StorageManager {

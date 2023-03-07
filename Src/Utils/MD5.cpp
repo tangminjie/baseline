@@ -8,7 +8,7 @@
 #include "Utils/MD5.h"
 #include "openssl/md5.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 #if __BYTE_ORDER == __LITTLE_ENDIAN

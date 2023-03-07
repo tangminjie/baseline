@@ -16,7 +16,7 @@
 #include "ThreadInternal.h"
 #include "Infra/Time/Time.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 
@@ -155,9 +155,9 @@ CThreadLoadingController::CThreadLoadingController():
     // act.sa_flags = SA_NODEFER | SA_RESTART;
 
     // int ret = sigaction(SIGUSR2,&act,&oldact);
-    // UFACE_ASSERT(ret == 0,"sigaction return error");
+    // ARCFACE_ASSERT(ret == 0,"sigaction return error");
     // /**保证没有使用*/
-    // UFACE_ASSERT(oldact.sa_handler == 0 && oldact.sa_sigaction == 0,"has used");
+    // ARCFACE_ASSERT(oldact.sa_handler == 0 && oldact.sa_sigaction == 0,"has used");
 }
 
 

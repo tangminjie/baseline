@@ -4,7 +4,7 @@
 
 #include "Infra/Concurrence/Guard.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 class CAtomicCount {

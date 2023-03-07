@@ -12,7 +12,7 @@
 #include "Infra/Time/Timer.h"
 
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 static TimerManagerInternal* gTimerManager = TimerManagerInternal::instance();
@@ -333,7 +333,7 @@ void TimerManagerInternal::putTimerThread(CTimerThread* pThread) {
 
     {
         CRecursiveGuard guard(TimerManagerInternal::smMutex);
-        UFACE_ASSERT(pThread != nullptr,"thread is null");
+        ARCFACE_ASSERT(pThread != nullptr,"thread is null");
 
         pThread->mNextPooled = mHeadPooled;
         mHeadPooled = pThread;
@@ -412,7 +412,7 @@ void TimerManagerInternal::threadProc() {
             continue;
         }
 
-        UFACE_ASSERT(mCurrentTime >= OldTime,"old time > current time");
+        ARCFACE_ASSERT(mCurrentTime >= OldTime,"old time > current time");
         while(mPHead && mPHead->mCallTime < mCurrentTime) {
             mPHead->run();
         }

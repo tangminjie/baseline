@@ -203,8 +203,8 @@ inline int64_t getTimezone() {
          * timezone 是系统提供的全局变量,但是在时区变化时不会自动更新,需要用tzset进行刷新
          * 但是tzset 不是线程安全的,在次加锁处理
          */
-        static Uface::Infra::CMutex s_mtxtz;
-        Uface::Infra::CGuard guard(s_mtxtz);
+        static ArcFace::Infra::CMutex s_mtxtz;
+        ArcFace::Infra::CGuard guard(s_mtxtz);
         tzset();
         first = false;
     }
@@ -213,7 +213,7 @@ inline int64_t getTimezone() {
 }
 }
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
     
 void timezoneDisable() {

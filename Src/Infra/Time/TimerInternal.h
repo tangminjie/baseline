@@ -4,7 +4,7 @@
 #include "Infra/Concurrence/Guard.h"
 #include "Infra/Concurrence/Semaphore.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 class CTimerThread;
@@ -154,4 +154,4 @@ private:
 };
 
 } // namespace Infra
-} // namespace Uface
+} // namespace ArcFace

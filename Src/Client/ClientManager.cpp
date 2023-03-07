@@ -17,7 +17,7 @@
 #include "Client/ClientManager.h"
 #include "Infra/Concurrence/Guard.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 
@@ -41,7 +41,7 @@ bool ClientManager::registerClient(IClient *client) {
     return true;
 }
 
-bool ClientManager::unregisterClient(const Uface::Application::IClient *client) {
+bool ClientManager::unregisterClient(const ArcFace::Application::IClient *client) {
     Infra::CGuard guard(mInternal->mMutex);
     ClientManagerInternal::IClientIterator iter = mInternal->mClientMap.find(client->getClientId());
     if (iter == mInternal->mClientMap.end()) {

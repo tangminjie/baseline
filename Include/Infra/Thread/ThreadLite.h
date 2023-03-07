@@ -5,7 +5,7 @@
 
 #include "Infra/Thread/Thread.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 /**
  * @brief  线程类，提供组合方式创建线程

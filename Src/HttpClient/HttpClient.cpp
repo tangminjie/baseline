@@ -2,7 +2,7 @@
 #include "Logger/Define.h"
 #include "HttpClient/HttpClient.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 typedef struct {

@@ -5,7 +5,7 @@
 
 #include "Infra/Define.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 /**
  * @brief 时间记录,用于测试统计多个样点之间的时间差

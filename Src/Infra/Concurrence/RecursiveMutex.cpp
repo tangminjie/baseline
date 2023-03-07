@@ -9,7 +9,7 @@
 /** pthread_mutexattr_settype bad*/
 extern "C"	int pthread_mutexattr_settype (pthread_mutexattr_t *__attr, int __kind);
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 struct CRecursiveMutex::RecursiveMutexInternal {
@@ -21,17 +21,17 @@ CRecursiveMutex::CRecursiveMutex() {
 
 	pthread_mutexattr_t attr;
 	int32_t ret = pthread_mutexattr_init(&attr);
-	UFACE_ASSERT(ret == 0,"initial pthread mutex attribute failed");
+	ARCFACE_ASSERT(ret == 0,"initial pthread mutex attribute failed");
 	ret = pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE_NP);
-	UFACE_ASSERT(ret == 0,"set pthread mutex attribure type failed");
+	ARCFACE_ASSERT(ret == 0,"set pthread mutex attribure type failed");
 
 	ret = pthread_mutex_init(&mInternal->mtx, &attr);
-	UFACE_ASSERT(ret == 0,"initial pthread mutex failed");
+	ARCFACE_ASSERT(ret == 0,"initial pthread mutex failed");
 }
 
 CRecursiveMutex::~CRecursiveMutex() {
 	int ret = pthread_mutex_destroy(&mInternal->mtx);
-	UFACE_ASSERT(ret == 0,"destroy pthread mutex failed");
+	ARCFACE_ASSERT(ret == 0,"destroy pthread mutex failed");
 	(void)ret;
 
 	delete mInternal;

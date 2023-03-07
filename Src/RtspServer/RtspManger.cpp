@@ -14,7 +14,7 @@
 #include <string.h>
 #include "rtspServer/RtspManger.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace RtspServer {
 
 RtspManger::RtspManger(/* args */)

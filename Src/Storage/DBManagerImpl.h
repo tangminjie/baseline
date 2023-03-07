@@ -17,7 +17,7 @@
 
 #include "Storage/DBManager.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 class DBManagerImpl: public IDBManager {

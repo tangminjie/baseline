@@ -6,7 +6,7 @@
 #include "Infra/Thread/ThreadSpecific.h"
 #include "Infra/Concurrence/ReadWriteMutex.h"
 
-namespace Uface {
+namespace ArcFace {
 
 static Infra::CThreadSpecific       tssLastError;
 class CErrorManager {
@@ -55,7 +55,7 @@ CErrorManager* CErrorManager::instance() {
 
 }
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 void setLastErrno(int32_t error) {

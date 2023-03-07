@@ -18,7 +18,7 @@
 #include <utility>
 #include "Storage/ITable.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 /**

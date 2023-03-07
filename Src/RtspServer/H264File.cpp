@@ -14,7 +14,7 @@
 #include <string.h>
 #include "rtspServer/H264File.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace RtspServer {
 
 H264File::H264File(int buf_size)

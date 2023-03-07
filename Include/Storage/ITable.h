@@ -19,7 +19,7 @@
 #include "Infra/Define.h"
 #include "jsoncpp/value.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 class ITable {

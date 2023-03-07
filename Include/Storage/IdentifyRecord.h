@@ -21,7 +21,7 @@
 #include "Storage/Define.h"
 #include "easySqllite/SqlRecord.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Application {
 
 class TableInternal;

@@ -4,7 +4,7 @@
 
 #include "Infra/Define.h"
 
-namespace Uface {
+namespace ArcFace {
 namespace Infra {
 
 class CRecursiveMutex {
