@@ -26,29 +26,29 @@ X86：
 
 #### 工程目录说明：
 
-|--- build 编译路径
-|--- Include 头文件路径
-|--- Lib 动态库路径 如opencv等
-|--- Src 源文件路径，入口函数在/src/applocation
-|--- CMakeList.txt cmake 描述文件
+|--- build 编译路径  
+|--- Include 头文件路径  
+|--- Lib 动态库路径 如opencv等  
+|--- Src 源文件路径，入口函数在/src/ applocation  
+|--- CMakeList.txt cmake 描述文件  
 
 #### 算法库相关说明：
-|---include/algArcSoft
-| |---amcomdef.h 平台文件
-| |---asvloffscreen.h 平台文件
-| |---arcsoft_face_sdk.h 接口文件
-| |---merror.h 错误码文件
+|---include/algArcSoft  
+| |---amcomdef.h 平台文件  
+| |---asvloffscreen.h 平台文件  
+| |---arcsoft_face_sdk.h 接口文件  
+| |---merror.h 错误码文件  
 
-|---lib/algArc
-|---|---linux_x64
-| |---|---libarcsoft_face.so 算法库
-| |---|---libarcsoft_face_engine.so 引擎库
+|---lib/algArc  
+|---|---linux_x64  
+| |---|---libarcsoft_face.so 算法库  
+| |---|---libarcsoft_face_engine.so 引擎库  
 
 ### 算法性能测试：
-处理器：Intel® Core™ i7- 
-安装内存(RAM)：16.0GB  
-系统类型：ubuntu 
-分辨率：1080p 
+处理器：Intel® Core™ i7-   
+安装内存(RAM)：16.0GB    
+系统类型：ubuntu  
+分辨率：1080p  
 
 算法 性能(ms)
 
