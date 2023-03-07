@@ -52,6 +52,7 @@ SET(CMAKE_CXX_COMPILER "g++")
 SET(CMAKE_BUILD_TYPE "Debug")
 SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
 SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+##线程调试工具打开
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=thread")
 
 add_compile_options(-std=c++11 -pthread -g  -ggdb -O0 -Wall  
@@ -112,7 +113,6 @@ target_link_libraries(neutron
 add_compile_options(-Wall -fdata-sections -ffunction-sections -fstack-protector-all -frtti -fexceptions -D__GNU_SOURCE)
 
 add_definitions(-DREPOSITORY_VERSION=${GIT_REPO_VERSION})
-
 
 
 
